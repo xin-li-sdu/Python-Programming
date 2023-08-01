@@ -21,7 +21,7 @@
 
 ![image](image/IBE1.png)
 
-需要注意的是，GPV方案中的参数$m$较大，使得 IBE所产生的输出对于实际应用来说太长了。对此，Ducas等人 介绍了一种GPV陷门的变体\cite{DLP14}。该方案利用了NTRU格的计算困难性假设，对于多项式环$\mathcal{R}:=\mathbb{Z}[X]/\phi(X)$（其中首一多项式$\phi(X)\in \mathbb{Z}[X]$），新的陷门生成算法输出一对${h}_{\mathrm{NTRU}}\in\mathcal{R}_{q},\mathbf{T}_{\rm{NTRU}}=\mathcal{R}^{2\times 2}$，在$\mathcal{R}_{q}=\mathcal{R}/ q \mathcal{R}$上满足$(1, {h}_{\mathrm{NTRU}}) \cdot \mathbf{T}_{\mathrm{NTRU }}=0 \bmod q$。由于该方案的陷门生成算法基于多项式环，只需要$m=2n$（而非之前的$m={\Theta}(n\log{q})$)，因此相对于GPV的陷门生成更加高效。
+需要注意的是，GPV方案中的参数$m$较大，使得 IBE所产生的输出对于实际应用来说太长了。对此，Ducas等人 介绍了一种GPV陷门的变体\cite{DLP14}。该方案利用了NTRU格的计算困难性假设，对于多项式环$\R:=Z[X]/\phi(X)$（其中首一多项式$\phi(X)\in \mathbb{Z}[X]$），新的陷门生成算法输出一对${h}_{\mathrm{NTRU}}\in\mathcal{R}_{q},\mathbf{T}_{\rm{NTRU}}=\mathcal{R}^{2\times 2}$，在$\mathcal{R}_{q}=\mathcal{R}/ q \mathcal{R}$上满足$(1, {h}_{\mathrm{NTRU}}) \cdot \mathbf{T}_{\mathrm{NTRU }}=0 \bmod q$。由于该方案的陷门生成算法基于多项式环，只需要$m=2n$（而非之前的$m={\Theta}(n\log{q})$)，因此相对于GPV的陷门生成更加高效。
 
 尽管在NTRU格构造的IBE方案已经足够适用于实践，但是在参数的选取上仍然可以改进。出于安全性和高效性的需求，$\phi(X)$最广泛的选择是$X^{n}+1$，其中$n=2^{k},k \in \mathbb{Z}$。当希望获得更高的安全级别，由于$n$的特殊形式（2的幂次），参数的选择欠缺灵活性。例如，在\cite{DLP14}中分析道当环的维数$n=512$时可以提供80bits的安全性，当$n=1024$时可以提供192bits的安全性。在这种形况下，当人们希望得到中间级别的安全等级时，比如128bits，就只能选择$n=1024$的环，从而导致巨大的效率损失。
 
